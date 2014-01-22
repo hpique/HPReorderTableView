@@ -56,10 +56,7 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    NSString *source = _objects[sourceIndexPath.row];
-    NSString *destination = _objects[destinationIndexPath.row];
-    [_objects replaceObjectAtIndex:destinationIndexPath.row withObject:source];
-    [_objects replaceObjectAtIndex:sourceIndexPath.row withObject:destination];
+    [_objects exchangeObjectAtIndex:sourceIndexPath.row withObjectAtIndex:destinationIndexPath.row];
 }
 
 @end
