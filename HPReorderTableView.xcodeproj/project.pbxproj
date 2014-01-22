@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87D02E72188F7ABE00273DEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D02E71188F7ABE00273DEC /* Foundation.framework */; };
+		87D02E77188F7ABE00273DEC /* HPReorderTableView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87D02E76188F7ABE00273DEC /* HPReorderTableView.h */; };
+		87D02E79188F7ABE00273DEC /* HPReorderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D02E78188F7ABE00273DEC /* HPReorderTableView.m */; };
+		87D02E80188F7ABE00273DEC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D02E7F188F7ABE00273DEC /* XCTest.framework */; };
+		87D02E81188F7ABE00273DEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D02E71188F7ABE00273DEC /* Foundation.framework */; };
+		87D02E83188F7ABE00273DEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D02E82188F7ABE00273DEC /* UIKit.framework */; };
+		87D02E86188F7ABE00273DEC /* libHPReorderTableView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D02E6E188F7ABE00273DEC /* libHPReorderTableView.a */; };
+		87D02E8C188F7ABE00273DEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87D02E8A188F7ABE00273DEC /* InfoPlist.strings */; };
+		87D02E8E188F7ABE00273DEC /* HPReorderTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D02E8D188F7ABE00273DEC /* HPReorderTableViewTests.m */; };
+		87D02E9C188F7B0D00273DEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D02E71188F7ABE00273DEC /* Foundation.framework */; };
+		87D02E9E188F7B0D00273DEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D02E9D188F7B0D00273DEC /* CoreGraphics.framework */; };
+		87D02E9F188F7B0D00273DEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D02E82188F7ABE00273DEC /* UIKit.framework */; };
+		87D02EA5188F7B0D00273DEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87D02EA3188F7B0D00273DEC /* InfoPlist.strings */; };
+		87D02EA7188F7B0D00273DEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D02EA6188F7B0D00273DEC /* main.m */; };
+		87D02EAB188F7B0D00273DEC /* HPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D02EAA188F7B0D00273DEC /* HPAppDelegate.m */; };
+		87D02EB4188F7B0E00273DEC /* HPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D02EB3188F7B0E00273DEC /* HPViewController.m */; };
+		87D02ECF188F7BC100273DEC /* HPReorderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D02E78188F7ABE00273DEC /* HPReorderTableView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87D02E84188F7ABE00273DEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87D02E66188F7ABE00273DEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87D02E6D188F7ABE00273DEC;
+			remoteInfo = HPReorderTableView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		87D02E6C188F7ABE00273DEC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				87D02E77188F7ABE00273DEC /* HPReorderTableView.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		87D02E6E188F7ABE00273DEC /* libHPReorderTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHPReorderTableView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		87D02E71188F7ABE00273DEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		87D02E75188F7ABE00273DEC /* HPReorderTableView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HPReorderTableView-Prefix.pch"; sourceTree = "<group>"; };
+		87D02E76188F7ABE00273DEC /* HPReorderTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPReorderTableView.h; sourceTree = "<group>"; };
+		87D02E78188F7ABE00273DEC /* HPReorderTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPReorderTableView.m; sourceTree = "<group>"; };
+		87D02E7E188F7ABE00273DEC /* HPReorderTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPReorderTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87D02E7F188F7ABE00273DEC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		87D02E82188F7ABE00273DEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		87D02E89188F7ABE00273DEC /* HPReorderTableViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HPReorderTableViewTests-Info.plist"; sourceTree = "<group>"; };
+		87D02E8B188F7ABE00273DEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		87D02E8D188F7ABE00273DEC /* HPReorderTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPReorderTableViewTests.m; sourceTree = "<group>"; };
+		87D02E9B188F7B0D00273DEC /* HPReorderTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPReorderTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87D02E9D188F7B0D00273DEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		87D02EA2188F7B0D00273DEC /* HPReorderTableViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HPReorderTableViewDemo-Info.plist"; sourceTree = "<group>"; };
+		87D02EA4188F7B0D00273DEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		87D02EA6188F7B0D00273DEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		87D02EA8188F7B0D00273DEC /* HPReorderTableViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HPReorderTableViewDemo-Prefix.pch"; sourceTree = "<group>"; };
+		87D02EA9188F7B0D00273DEC /* HPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPAppDelegate.h; sourceTree = "<group>"; };
+		87D02EAA188F7B0D00273DEC /* HPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPAppDelegate.m; sourceTree = "<group>"; };
+		87D02EB2188F7B0E00273DEC /* HPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPViewController.h; sourceTree = "<group>"; };
+		87D02EB3188F7B0E00273DEC /* HPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87D02E6B188F7ABE00273DEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D02E72188F7ABE00273DEC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87D02E7B188F7ABE00273DEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D02E80188F7ABE00273DEC /* XCTest.framework in Frameworks */,
+				87D02E83188F7ABE00273DEC /* UIKit.framework in Frameworks */,
+				87D02E81188F7ABE00273DEC /* Foundation.framework in Frameworks */,
+				87D02E86188F7ABE00273DEC /* libHPReorderTableView.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87D02E98188F7B0D00273DEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D02E9E188F7B0D00273DEC /* CoreGraphics.framework in Frameworks */,
+				87D02E9F188F7B0D00273DEC /* UIKit.framework in Frameworks */,
+				87D02E9C188F7B0D00273DEC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87D02E65188F7ABE00273DEC = {
+			isa = PBXGroup;
+			children = (
+				87D02E73188F7ABE00273DEC /* HPReorderTableView */,
+				87D02E87188F7ABE00273DEC /* HPReorderTableViewTests */,
+				87D02EA0188F7B0D00273DEC /* HPReorderTableViewDemo */,
+				87D02E70188F7ABE00273DEC /* Frameworks */,
+				87D02E6F188F7ABE00273DEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87D02E6F188F7ABE00273DEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87D02E6E188F7ABE00273DEC /* libHPReorderTableView.a */,
+				87D02E7E188F7ABE00273DEC /* HPReorderTableViewTests.xctest */,
+				87D02E9B188F7B0D00273DEC /* HPReorderTableViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87D02E70188F7ABE00273DEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87D02E71188F7ABE00273DEC /* Foundation.framework */,
+				87D02E7F188F7ABE00273DEC /* XCTest.framework */,
+				87D02E82188F7ABE00273DEC /* UIKit.framework */,
+				87D02E9D188F7B0D00273DEC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87D02E73188F7ABE00273DEC /* HPReorderTableView */ = {
+			isa = PBXGroup;
+			children = (
+				87D02E76188F7ABE00273DEC /* HPReorderTableView.h */,
+				87D02E78188F7ABE00273DEC /* HPReorderTableView.m */,
+				87D02E74188F7ABE00273DEC /* Supporting Files */,
+			);
+			path = HPReorderTableView;
+			sourceTree = "<group>";
+		};
+		87D02E74188F7ABE00273DEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87D02E75188F7ABE00273DEC /* HPReorderTableView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87D02E87188F7ABE00273DEC /* HPReorderTableViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				87D02E8D188F7ABE00273DEC /* HPReorderTableViewTests.m */,
+				87D02E88188F7ABE00273DEC /* Supporting Files */,
+			);
+			path = HPReorderTableViewTests;
+			sourceTree = "<group>";
+		};
+		87D02E88188F7ABE00273DEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87D02E89188F7ABE00273DEC /* HPReorderTableViewTests-Info.plist */,
+				87D02E8A188F7ABE00273DEC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87D02EA0188F7B0D00273DEC /* HPReorderTableViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				87D02EA9188F7B0D00273DEC /* HPAppDelegate.h */,
+				87D02EAA188F7B0D00273DEC /* HPAppDelegate.m */,
+				87D02EB2188F7B0E00273DEC /* HPViewController.h */,
+				87D02EB3188F7B0E00273DEC /* HPViewController.m */,
+				87D02EA1188F7B0D00273DEC /* Supporting Files */,
+			);
+			path = HPReorderTableViewDemo;
+			sourceTree = "<group>";
+		};
+		87D02EA1188F7B0D00273DEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87D02EA2188F7B0D00273DEC /* HPReorderTableViewDemo-Info.plist */,
+				87D02EA3188F7B0D00273DEC /* InfoPlist.strings */,
+				87D02EA6188F7B0D00273DEC /* main.m */,
+				87D02EA8188F7B0D00273DEC /* HPReorderTableViewDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87D02E6D188F7ABE00273DEC /* HPReorderTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87D02E91188F7ABE00273DEC /* Build configuration list for PBXNativeTarget "HPReorderTableView" */;
+			buildPhases = (
+				87D02E6A188F7ABE00273DEC /* Sources */,
+				87D02E6B188F7ABE00273DEC /* Frameworks */,
+				87D02E6C188F7ABE00273DEC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HPReorderTableView;
+			productName = HPReorderTableView;
+			productReference = 87D02E6E188F7ABE00273DEC /* libHPReorderTableView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		87D02E7D188F7ABE00273DEC /* HPReorderTableViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87D02E94188F7ABE00273DEC /* Build configuration list for PBXNativeTarget "HPReorderTableViewTests" */;
+			buildPhases = (
+				87D02E7A188F7ABE00273DEC /* Sources */,
+				87D02E7B188F7ABE00273DEC /* Frameworks */,
+				87D02E7C188F7ABE00273DEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87D02E85188F7ABE00273DEC /* PBXTargetDependency */,
+			);
+			name = HPReorderTableViewTests;
+			productName = HPReorderTableViewTests;
+			productReference = 87D02E7E188F7ABE00273DEC /* HPReorderTableViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		87D02E9A188F7B0D00273DEC /* HPReorderTableViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87D02ECD188F7B0E00273DEC /* Build configuration list for PBXNativeTarget "HPReorderTableViewDemo" */;
+			buildPhases = (
+				87D02E97188F7B0D00273DEC /* Sources */,
+				87D02E98188F7B0D00273DEC /* Frameworks */,
+				87D02E99188F7B0D00273DEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HPReorderTableViewDemo;
+			productName = HPReorderTableViewDemo;
+			productReference = 87D02E9B188F7B0D00273DEC /* HPReorderTableViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87D02E66188F7ABE00273DEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Hermes Pique";
+				TargetAttributes = {
+					87D02E7D188F7ABE00273DEC = {
+						TestTargetID = 87D02E9A188F7B0D00273DEC;
+					};
+				};
+			};
+			buildConfigurationList = 87D02E69188F7ABE00273DEC /* Build configuration list for PBXProject "HPReorderTableView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87D02E65188F7ABE00273DEC;
+			productRefGroup = 87D02E6F188F7ABE00273DEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87D02E6D188F7ABE00273DEC /* HPReorderTableView */,
+				87D02E7D188F7ABE00273DEC /* HPReorderTableViewTests */,
+				87D02E9A188F7B0D00273DEC /* HPReorderTableViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87D02E7C188F7ABE00273DEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D02E8C188F7ABE00273DEC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87D02E99188F7B0D00273DEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D02EA5188F7B0D00273DEC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87D02E6A188F7ABE00273DEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D02E79188F7ABE00273DEC /* HPReorderTableView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87D02E7A188F7ABE00273DEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D02E8E188F7ABE00273DEC /* HPReorderTableViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87D02E97188F7B0D00273DEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D02EB4188F7B0E00273DEC /* HPViewController.m in Sources */,
+				87D02ECF188F7BC100273DEC /* HPReorderTableView.m in Sources */,
+				87D02EAB188F7B0D00273DEC /* HPAppDelegate.m in Sources */,
+				87D02EA7188F7B0D00273DEC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87D02E85188F7ABE00273DEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87D02E6D188F7ABE00273DEC /* HPReorderTableView */;
+			targetProxy = 87D02E84188F7ABE00273DEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		87D02E8A188F7ABE00273DEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87D02E8B188F7ABE00273DEC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		87D02EA3188F7B0D00273DEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87D02EA4188F7B0D00273DEC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87D02E8F188F7ABE00273DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		87D02E90188F7ABE00273DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87D02E92188F7ABE00273DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HPReorderTableView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPReorderTableView/HPReorderTableView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		87D02E93188F7ABE00273DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HPReorderTableView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPReorderTableView/HPReorderTableView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		87D02E95188F7ABE00273DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPReorderTableViewDemo.app/HPReorderTableViewDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPReorderTableView/HPReorderTableView-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HPReorderTableViewTests/HPReorderTableViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		87D02E96188F7ABE00273DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPReorderTableViewDemo.app/HPReorderTableViewDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPReorderTableView/HPReorderTableView-Prefix.pch";
+				INFOPLIST_FILE = "HPReorderTableViewTests/HPReorderTableViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		87D02EC9188F7B0E00273DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPReorderTableViewDemo/HPReorderTableViewDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HPReorderTableViewDemo/HPReorderTableViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		87D02ECA188F7B0E00273DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPReorderTableViewDemo/HPReorderTableViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "HPReorderTableViewDemo/HPReorderTableViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87D02E69188F7ABE00273DEC /* Build configuration list for PBXProject "HPReorderTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87D02E8F188F7ABE00273DEC /* Debug */,
+				87D02E90188F7ABE00273DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87D02E91188F7ABE00273DEC /* Build configuration list for PBXNativeTarget "HPReorderTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87D02E92188F7ABE00273DEC /* Debug */,
+				87D02E93188F7ABE00273DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87D02E94188F7ABE00273DEC /* Build configuration list for PBXNativeTarget "HPReorderTableViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87D02E95188F7ABE00273DEC /* Debug */,
+				87D02E96188F7ABE00273DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87D02ECD188F7B0E00273DEC /* Build configuration list for PBXNativeTarget "HPReorderTableViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87D02EC9188F7B0E00273DEC /* Debug */,
+				87D02ECA188F7B0E00273DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87D02E66188F7ABE00273DEC /* Project object */;
+}
