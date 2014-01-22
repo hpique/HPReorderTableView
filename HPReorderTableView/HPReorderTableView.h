@@ -21,7 +21,8 @@
 
 @interface HPReorderTableView : UITableView
 
-/** Set enabled to NO to disable reordering functionality.
+/** Set enabled to NO to disable reordering functionality. You can also provide a UIGestureRecognizerDelegate and implement gestureRecognizerShouldBegin:. 
+ If you need to limit the area in which touches can trigger reordering, implement gestureRecognizer:shouldReceiveTouch:.
  */
 @property (nonatomic, readonly) UILongPressGestureRecognizer *reorderGestureRecognizer;
 
@@ -31,7 +32,7 @@
 @property (nonatomic, readonly) UIView *reorderDragView;
 
 /**
- Provide your UITableViewCell subclass to set the appeareance of the temporary empty cell during dragging. An empty UITableViewCell is used by default.
+ Provide your UITableViewCell subclass to set the appeareance of the temporary empty cell during dragging. An empty UITableViewCell is used by default, which leaves the empty space white.
  */
 - (void)registerTemporaryEmptyCellClass:(Class)cellClass;
 
