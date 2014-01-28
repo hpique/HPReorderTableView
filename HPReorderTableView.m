@@ -1,3 +1,4 @@
+
 //
 //  HPReorderTableView.m
 //
@@ -284,9 +285,8 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
 - (void)reorderCurrentRowToIndexPath:(NSIndexPath*)toIndexPath
 {
     [self beginUpdates];
-    [self deleteRowsAtIndexPaths:@[_reorderCurrentIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self insertRowsAtIndexPaths:@[toIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    if ([self.delegate respondsToSelector:@selector(tableView:moveRowAtIndexPath:toIndexPath:)])
+    [self moveRowAtIndexPath:_reorderCurrentIndexPath toIndexPath:toIndexPath];
+    if ([self.dataSource respondsToSelector:@selector(tableView:moveRowAtIndexPath:toIndexPath:)])
     {
         [self.dataSource tableView:self moveRowAtIndexPath:_reorderCurrentIndexPath toIndexPath:toIndexPath];
     }
