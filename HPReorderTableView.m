@@ -26,7 +26,7 @@
 
 @implementation HPReorderTableView {
     UIImageView *_reorderDragView;
-    id<UITableViewDataSource> _realDataSource;
+    __weak id<UITableViewDataSource> _realDataSource;
     NSIndexPath *_reorderInitialIndexPath;
     NSIndexPath *_reorderCurrentIndexPath;
     CADisplayLink *_scrollDisplayLink;
