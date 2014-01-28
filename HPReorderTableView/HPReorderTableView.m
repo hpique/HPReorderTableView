@@ -1,3 +1,4 @@
+
 //
 //  HPReorderTableView.m
 //
@@ -25,7 +26,7 @@
 
 @implementation HPReorderTableView {
     UIImageView *_reorderDragView;
-    id<UITableViewDataSource> _realDataSource;
+    __weak id<UITableViewDataSource> _realDataSource;
     NSIndexPath *_reorderInitialIndexPath;
     NSIndexPath *_reorderCurrentIndexPath;
     CADisplayLink *_scrollDisplayLink;
@@ -284,8 +285,7 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
 - (void)reorderCurrentRowToIndexPath:(NSIndexPath*)toIndexPath
 {
     [self beginUpdates];
-    [self deleteRowsAtIndexPaths:@[_reorderCurrentIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self insertRowsAtIndexPaths:@[toIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self moveRowAtIndexPath:_reorderCurrentIndexPath toIndexPath:toIndexPath];
     if ([self.dataSource respondsToSelector:@selector(tableView:moveRowAtIndexPath:toIndexPath:)])
     {
         [self.dataSource tableView:self moveRowAtIndexPath:_reorderCurrentIndexPath toIndexPath:toIndexPath];
