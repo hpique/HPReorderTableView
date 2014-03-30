@@ -167,7 +167,7 @@ static NSString *HPReorderTableViewCellReuseIdentifier = @"HPReorderTableViewCel
 
 - (BOOL)canMoveRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    return [self.dataSource respondsToSelector:@selector(tableView:canMoveRowAtIndexPath:)] && [self.dataSource tableView:self canMoveRowAtIndexPath:indexPath];
+    return ![self.dataSource respondsToSelector:@selector(tableView:canMoveRowAtIndexPath:)] || [self.dataSource tableView:self canMoveRowAtIndexPath:indexPath];
 }
 
 - (BOOL)hasRows
