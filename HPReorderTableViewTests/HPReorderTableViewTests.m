@@ -7,28 +7,41 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "HPReorderTableView.h"
 
 @interface HPReorderTableViewTests : XCTestCase
 
 @end
 
-@implementation HPReorderTableViewTests
+@implementation HPReorderTableViewTests {
+    HPReorderTableView *_tableView;
+}
 
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    _tableView = [HPReorderTableView new];
 }
 
-- (void)tearDown
+
+- (void)testInitWithFrameStyle
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    XCTAssertNotNil(tableView.panGestureRecognizer, @"");
 }
 
-- (void)testExample
+- (void)testInitWithFrame
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero];
+    XCTAssertNotNil(tableView.panGestureRecognizer, @"");
 }
+
+- (void)testInitWithCoder
+{
+    NSCoder *coder = [[NSKeyedUnarchiver alloc] initForReadingWithData:[NSData new]];
+    UITableView *tableView = [[UITableView alloc] initWithCoder:coder];
+    XCTAssertNotNil(tableView.panGestureRecognizer, @"");
+}
+
 
 @end
