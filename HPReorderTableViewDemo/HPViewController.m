@@ -77,6 +77,4 @@
     return [UIColor colorWithHue:(5*r)/360 saturation:0.2f brightness:1.0f alpha:1.0f];
 }
 
-
-
 @end
