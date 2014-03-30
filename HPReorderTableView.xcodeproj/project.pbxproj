@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		873E091618E843A9007E9675 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873E091518E843A9007E9675 /* Images.xcassets */; };
 		87D02E72188F7ABE00273DEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D02E71188F7ABE00273DEC /* Foundation.framework */; };
 		87D02E77188F7ABE00273DEC /* HPReorderTableView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87D02E76188F7ABE00273DEC /* HPReorderTableView.h */; };
 		87D02E79188F7ABE00273DEC /* HPReorderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D02E78188F7ABE00273DEC /* HPReorderTableView.m */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		873E091518E843A9007E9675 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		87D02E6E188F7ABE00273DEC /* libHPReorderTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHPReorderTableView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D02E71188F7ABE00273DEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		87D02E76188F7ABE00273DEC /* HPReorderTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPReorderTableView.h; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		87D02EA0188F7B0D00273DEC /* HPReorderTableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				873E091518E843A9007E9675 /* Images.xcassets */,
 				87D02EA9188F7B0D00273DEC /* HPAppDelegate.h */,
 				87D02EAA188F7B0D00273DEC /* HPAppDelegate.m */,
 				87D02EB2188F7B0E00273DEC /* HPViewController.h */,
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87D02EA5188F7B0D00273DEC /* InfoPlist.strings in Resources */,
+				873E091618E843A9007E9675 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
