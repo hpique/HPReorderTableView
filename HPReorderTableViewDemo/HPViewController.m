@@ -22,20 +22,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _objects = [NSMutableArray array];
-    for (int i = 0; i < 100; i++)
-    {
-        [_objects addObject:[NSString stringWithFormat:@"%d", i]];
-    }
+    [self loadData];
+
     _tableView = [[HPReorderTableView alloc] initWithFrame:self.view.bounds]; // Here is where the magic happens
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.dataSource = self;
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"Cell"];
     [self.view addSubview:_tableView];
 }
 
-
-#pragma mark - UITableViewDataSource
+#pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -45,7 +42,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text = _objects[indexPath.row];
+    NSArray *object = _objects[indexPath.row];
+    cell.textLabel.text = object[0];
+    cell.contentView.backgroundColor = object[1];
     return cell;
 }
 
@@ -58,5 +57,26 @@
 {
     [_objects exchangeObjectAtIndex:sourceIndexPath.row withObjectAtIndex:destinationIndexPath.row];
 }
+
+#pragma mark Utils
+
+- (void)loadData
+{
+    _objects = [NSMutableArray array];
+    for (int i = 0; i < 100; i++)
+    {
+        NSString *text = [NSString stringWithFormat:NSLocalizedString(@"Cell %d", @""), i + 1];
+        UIColor *color = [self.class cuasiRandomColor];
+        [_objects addObject:@[text, color]];
+    }
+}
+
++ (UIColor*)cuasiRandomColor
+{
+    float r = arc4random() % 72;
+    return [UIColor colorWithHue:(5*r)/360 saturation:0.2f brightness:1.0f alpha:1.0f];
+}
+
+
 
 @end
