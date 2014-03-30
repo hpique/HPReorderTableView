@@ -1,0 +1,4 @@
+language: objective-c
+script: 
+  - xctool -project HPReorderTableView.xcodeproj -scheme 'HPReorderTableView' -configuration Release -sdk iphonesimulator test
+  - xctool -project HPReorderTableView.xcodeproj -scheme 'HPReorderTableViewDemo' -configuration Release -sdk iphonesimulator
