@@ -26,21 +26,29 @@
 
 - (void)testInitWithFrameStyle
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    XCTAssertNotNil(tableView.panGestureRecognizer, @"");
+    HPReorderTableView *tableView = [[HPReorderTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    XCTAssertNotNil(tableView.reorderGestureRecognizer, @"");
+    XCTAssertNotNil(tableView.reorderDragView, @"");
 }
 
 - (void)testInitWithFrame
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero];
-    XCTAssertNotNil(tableView.panGestureRecognizer, @"");
+    HPReorderTableView *tableView = [[HPReorderTableView alloc] initWithFrame:CGRectZero];
+    XCTAssertNotNil(tableView.reorderGestureRecognizer, @"");
+    XCTAssertNotNil(tableView.reorderDragView, @"");
 }
 
 - (void)testInitWithCoder
 {
     NSCoder *coder = [[NSKeyedUnarchiver alloc] initForReadingWithData:[NSData new]];
-    UITableView *tableView = [[UITableView alloc] initWithCoder:coder];
-    XCTAssertNotNil(tableView.panGestureRecognizer, @"");
+    HPReorderTableView *tableView = [[HPReorderTableView alloc] initWithCoder:coder];
+    XCTAssertNotNil(tableView.reorderGestureRecognizer, @"");
+    XCTAssertNotNil(tableView.reorderDragView, @"");
+}
+
+- (void)testRegisterTemporaryEmptyCellClass
+{
+    [_tableView registerTemporaryEmptyCellClass:UITableViewCell.class];
 }
 
 
