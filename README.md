@@ -17,7 +17,7 @@ Using [CocoaPods](http://cocoapods.org/):
 pod "HPReorderTableView", "~> 0.1"
 ```
 
-Or add the files from the [HPReorderTableView]() directory if you're doing it manually.
+Or add the files from the [HPReorderTableView](https://github.com/hpique/HPReorderTableView/tree/master/HPReorderTableView) directory if you're doing it manually.
 
 ##Usage
 
@@ -29,14 +29,9 @@ UITableView *tableView = [[HPReorderTableView alloc] init];
 
 Or if you're using interface builder, change the class of the table view to `HPReorderTableView`.
 
-Then implement the move methods in your table view data source as you would do if you were using the default reorder behavior. For example:
+Then implement the reordering methods of your table view data source as you would normally do if you were using the default reorder behavior. For example:
 
 ```objective-c
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return YES;
-}
-
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [_objects exchangeObjectAtIndex:sourceIndexPath.row withObjectAtIndex:destinationIndexPath.row];
