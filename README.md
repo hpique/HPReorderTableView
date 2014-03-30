@@ -1,9 +1,7 @@
 HPReorderTableView
 ==================
 
-![Version](https://cocoapod-badges.herokuapp.com/v/HPReorderTableView/badge.png) 
-![Platform](https://cocoapod-badges.herokuapp.com/p/HPReorderTableView/badge.png) 
-[![Build Status](https://travis-ci.org/hpique/HPReorderTableView.png)](https://travis-ci.org/hpique/HPReorderTableView) 
+![Version](https://cocoapod-badges.herokuapp.com/v/HPReorderTableView/badge.png) ![Platform](https://cocoapod-badges.herokuapp.com/p/HPReorderTableView/badge.png) [![Build Status](https://travis-ci.org/hpique/HPReorderTableView.png)](https://travis-ci.org/hpique/HPReorderTableView) 
 
 Drop-in UITableView replacement to reorder cells with long press on any part of the cell.
 
