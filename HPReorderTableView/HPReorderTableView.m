@@ -285,7 +285,7 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
 - (void)reorderCurrentRowToIndexPath:(NSIndexPath*)toIndexPath
 {
     [self beginUpdates];
-    [self moveRowAtIndexPath:toIndexPath toIndexPath:_reorderCurrentIndexPath];
+    [self moveRowAtIndexPath:toIndexPath toIndexPath:_reorderCurrentIndexPath]; // Order is important to keep the empty cell behind
     if ([self.dataSource respondsToSelector:@selector(tableView:moveRowAtIndexPath:toIndexPath:)])
     {
         [self.dataSource tableView:self moveRowAtIndexPath:_reorderCurrentIndexPath toIndexPath:toIndexPath];
