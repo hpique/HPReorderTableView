@@ -14,8 +14,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[HPViewController alloc] init];
-    [self.window makeKeyAndVisible];    return YES;
+    self.window.rootViewController = [HPViewController new];
+    [self.window makeKeyAndVisible];
+    return YES;
 }
 
 @end
