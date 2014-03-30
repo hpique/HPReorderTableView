@@ -52,7 +52,6 @@
 /* Begin PBXFileReference section */
 		87D02E6E188F7ABE00273DEC /* libHPReorderTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHPReorderTableView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D02E71188F7ABE00273DEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		87D02E75188F7ABE00273DEC /* HPReorderTableView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HPReorderTableView-Prefix.pch"; sourceTree = "<group>"; };
 		87D02E76188F7ABE00273DEC /* HPReorderTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPReorderTableView.h; sourceTree = "<group>"; };
 		87D02E78188F7ABE00273DEC /* HPReorderTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPReorderTableView.m; sourceTree = "<group>"; };
 		87D02E7E188F7ABE00273DEC /* HPReorderTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPReorderTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,17 +142,8 @@
 			children = (
 				87D02E76188F7ABE00273DEC /* HPReorderTableView.h */,
 				87D02E78188F7ABE00273DEC /* HPReorderTableView.m */,
-				87D02E74188F7ABE00273DEC /* Supporting Files */,
 			);
 			path = HPReorderTableView;
-			sourceTree = "<group>";
-		};
-		87D02E74188F7ABE00273DEC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				87D02E75188F7ABE00273DEC /* HPReorderTableView-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		87D02E87188F7ABE00273DEC /* HPReorderTableViewTests */ = {
@@ -258,7 +248,7 @@
 		87D02E66188F7ABE00273DEC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Hermes Pique";
 				TargetAttributes = {
 					87D02E7D188F7ABE00273DEC = {
@@ -367,7 +357,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -405,7 +394,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -438,7 +426,6 @@
 			buildSettings = {
 				DSTROOT = /tmp/HPReorderTableView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HPReorderTableView/HPReorderTableView-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -450,7 +437,6 @@
 			buildSettings = {
 				DSTROOT = /tmp/HPReorderTableView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HPReorderTableView/HPReorderTableView-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -460,15 +446,12 @@
 		87D02E95188F7ABE00273DEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPReorderTableViewDemo.app/HPReorderTableViewDemo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HPReorderTableView/HPReorderTableView-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -483,15 +466,12 @@
 		87D02E96188F7ABE00273DEC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPReorderTableViewDemo.app/HPReorderTableViewDemo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HPReorderTableView/HPReorderTableView-Prefix.pch";
 				INFOPLIST_FILE = "HPReorderTableViewTests/HPReorderTableViewTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -502,7 +482,6 @@
 		87D02EC9188F7B0E00273DEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -527,7 +506,6 @@
 		87D02ECA188F7B0E00273DEC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
