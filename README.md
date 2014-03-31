@@ -1,7 +1,7 @@
 HPReorderTableView
 ==================
 
-![Version](https://cocoapod-badges.herokuapp.com/v/HPReorderTableView/badge.png) ![Platform](https://cocoapod-badges.herokuapp.com/p/HPReorderTableView/badge.png) [![Build Status](https://travis-ci.org/hpique/HPReorderTableView.png)](https://travis-ci.org/hpique/HPReorderTableView) 
+[![Version](https://cocoapod-badges.herokuapp.com/v/HPReorderTableView/badge.png)](http://cocoadocs.org/docsets/HPReorderTableView) [![Platform](https://cocoapod-badges.herokuapp.com/p/HPReorderTableView/badge.png)](http://cocoadocs.org/docsets/HPReorderTableView) [![Build Status](https://travis-ci.org/hpique/HPReorderTableView.png)](https://travis-ci.org/hpique/HPReorderTableView) 
 
 Drop-in UITableView replacement to reorder cells with long press on any part of the cell.
 
@@ -35,6 +35,10 @@ Then implement the reordering methods of your table view data source as you woul
     [_objects exchangeObjectAtIndex:sourceIndexPath.row withObjectAtIndex:destinationIndexPath.row];
 }
 ```
+
+##Customization
+
+See the [documentation](http://cocoadocs.org/docsets/HPReorderTableView) for customization options.
 
 ##Requirements
 
