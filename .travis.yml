@@ -1,4 +1,7 @@
 language: objective-c
+before_script:
+  - brew update
+  - brew upgrade xctool
 script: 
   - xctool -project HPReorderTableView.xcodeproj -scheme 'HPReorderTableView' -configuration Release -sdk iphonesimulator test
   - xctool -project HPReorderTableView.xcodeproj -scheme 'HPReorderTableViewDemo' -configuration Release -sdk iphonesimulator
