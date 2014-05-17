@@ -12,7 +12,7 @@ Drop-in UITableView replacement to reorder cells with long press on any part of 
 Using [CocoaPods](http://cocoapods.org/):
 
 ```ruby
-pod "HPReorderTableView", "~> 0.1"
+pod 'HPReorderTableView', '~> 0.2'
 ```
 
 Or add the files from the [HPReorderTableView](https://github.com/hpique/HPReorderTableView/tree/master/HPReorderTableView) directory if you're doing it manually.
