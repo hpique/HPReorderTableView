@@ -20,6 +20,12 @@
 
 #import "HPReorderTableView.h"
 
+@interface HPReorderTableView(Subclassing)
+
+@property (nonatomic, readonly) id<UITableViewDataSource> hp_realDataSource;
+
+@end
+
 @interface HPReorderTableView()<UITableViewDataSource>
 
 @end
@@ -294,6 +300,13 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
     [self endUpdates];
 }
 
+#pragma mark Subclassing
+
+- (id<UITableViewDataSource>)hp_realDataSource
+{
+    return _realDataSource;
+}
+
 #pragma mark After BVReorderTableView
 // Taken from https://github.com/bvogelzang/BVReorderTableView/blob/master/BVReorderTableView.m with minor modifications
 //
@@ -408,6 +421,18 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
     if (toCellLocation.y <= toHeight - originalHeight) return;
     
     [self reorderCurrentRowToIndexPath:toIndexPath];
+}
+
+@end
+
+@implementation HPReorderAndSwipeToDeleteTableView
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.hp_realDataSource respondsToSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:)])
+    {
+        return [self.hp_realDataSource tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+    }
 }
 
 @end

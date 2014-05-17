@@ -19,6 +19,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Table view with drag-and-drop reordering of cells.
+ @discussion If you need the default swipe-to-delete functionality, use @c HPReorderAndSwipeToDeleteTableView instead.
+ */
 @interface HPReorderTableView : UITableView
 
 /** Set enabled to NO to disable reordering functionality. You can also provide a UIGestureRecognizerDelegate and implement gestureRecognizerShouldBegin:. 
@@ -35,5 +39,13 @@
  Provide your UITableViewCell subclass to set the appeareance of the temporary empty cell during dragging. An empty UITableViewCell is used by default, which leaves the empty space white.
  */
 - (void)registerTemporaryEmptyCellClass:(Class)cellClass;
+
+@end
+
+/**
+ Table view with drag-and-drop reordering of cells and swipe-to-delete enabled.
+ @discussion Due to an unfortunate UITableView design decision the only way for @c HPReorderTableView to support the default swipe-to-delete functionality is to enable it by default. This is different from the standard UITableView behavior, thus the need for a separate class to use the swipe-to-delete feature. See https://github.com/hpique/HPReorderTableView/issues/4 for more information.
+ **/
+@interface HPReorderAndSwipeToDeleteTableView : HPReorderTableView
 
 @end
