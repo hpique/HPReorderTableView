@@ -19,13 +19,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ReorderTableViewDelegate <UITableViewDelegate>
+@optional
+- (void)finishedReorderOnIndexPath:(NSIndexPath *)indexPath;
+@end
+
 /**
  Table view with drag-and-drop reordering of cells.
  @discussion If you need the default swipe-to-delete functionality, use @c HPReorderAndSwipeToDeleteTableView instead.
  */
 @interface HPReorderTableView : UITableView
 
-/** Set enabled to NO to disable reordering functionality. You can also provide a UIGestureRecognizerDelegate and implement gestureRecognizerShouldBegin:. 
+@property (nonatomic, assign) id <ReorderTableViewDelegate> delegate;
+
+/** Set enabled to NO to disable reordering functionality. You can also provide a UIGestureRecognizerDelegate and implement gestureRecognizerShouldBegin:.
  If you need to limit the area in which touches can trigger reordering, implement gestureRecognizer:shouldReceiveTouch:.
  */
 @property (nonatomic, readonly) UILongPressGestureRecognizer *reorderGestureRecognizer;
