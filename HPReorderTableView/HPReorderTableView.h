@@ -19,7 +19,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ReorderTableViewDelegate <UITableViewDelegate>
+@protocol HPReorderTableViewDelegate <UITableViewDelegate>
 @optional
 - (void)finishedReorderOnIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -30,7 +30,7 @@
  */
 @interface HPReorderTableView : UITableView
 
-@property (nonatomic, assign) id <ReorderTableViewDelegate> delegate;
+@property (nonatomic, assign) id <HPReorderTableViewDelegate> delegate;
 
 /** Set enabled to NO to disable reordering functionality. You can also provide a UIGestureRecognizerDelegate and implement gestureRecognizerShouldBegin:. 
  If you need to limit the area in which touches can trigger reordering, implement gestureRecognizer:shouldReceiveTouch:.
