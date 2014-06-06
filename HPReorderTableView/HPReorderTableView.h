@@ -40,6 +40,8 @@
  */
 - (void)registerTemporaryEmptyCellClass:(Class)cellClass;
 
+@property (strong, readwrite) void (^reorderFinishedHandler)();
+
 @end
 
 /**
