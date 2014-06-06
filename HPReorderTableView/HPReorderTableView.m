@@ -280,6 +280,11 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
                      } completion:^(BOOL finished) {
                          [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                          [self performSelector:@selector(removeReorderDragView) withObject:nil afterDelay:0]; // Prevent flicker
+                         
+                         if (self.reorderFinishedHandler)
+                         {
+                             self.reorderFinishedHandler();
+                         }
                      }];
 }
 
