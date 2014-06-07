@@ -40,6 +40,8 @@
     CGFloat _reorderDragViewShadowOpacity;
 }
 
+@dynamic delegate;
+
 static NSTimeInterval HPReorderTableViewAnimationDuration = 0.2;
 
 static NSString *HPReorderTableViewCellReuseIdentifier = @"HPReorderTableViewCellReuseIdentifier";
@@ -280,6 +282,9 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
                      } completion:^(BOOL finished) {
                          [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                          [self performSelector:@selector(removeReorderDragView) withObject:nil afterDelay:0]; // Prevent flicker
+                         if ([self.delegate respondsToSelector:@selector(tableView: didEndReorderingRowAtIndexPath:)]) {
+                           [self.delegate tableView:self didEndReorderingRowAtIndexPath:indexPath];
+                         }
                      }];
 }
 
