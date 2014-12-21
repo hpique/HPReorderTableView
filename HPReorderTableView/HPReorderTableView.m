@@ -136,12 +136,28 @@ static NSString *HPReorderTableViewCellReuseIdentifier = @"HPReorderTableViewCel
     return [_realDataSource tableView:self numberOfRowsInSection:section];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [_realDataSource numberOfSectionsInTableView:tableView];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    if ([_realDataSource respondsToSelector:@selector(numberOfSectionsInTableView:)])
+    {
+        return [_realDataSource numberOfSectionsInTableView:tableView];
+    }
+    else
+    {
+        return 1;
+    }
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [_realDataSource tableView:tableView titleForHeaderInSection:section];
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if ([_realDataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)])
+    {
+        return [_realDataSource tableView:tableView titleForHeaderInSection:section];
+    }
+    else
+    {
+        return nil;
+    }
 }
 
 #pragma mark - Data Source Forwarding
