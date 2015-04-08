@@ -226,6 +226,9 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
         return;
     }
     
+    if ([self.delegate respondsToSelector:@selector(tableView:willBeginReorderingRowAtIndexPath:)]) {
+        [self.delegate tableView:self willBeginReorderingRowAtIndexPath:indexPath];
+    }
     UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO animated:NO];
     [cell setHighlighted:NO animated:NO];
@@ -247,6 +250,10 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
     [self animateShadowOpacityFromValue:0 toValue:_reorderDragView.layer.shadowOpacity];
     [UIView animateWithDuration:HPReorderTableViewAnimationDuration animations:^{
         _reorderDragView.center = CGPointMake(self.center.x, location.y);
+    } completion:^(BOOL finished) {
+        if ([self.delegate respondsToSelector:@selector(tableView:didBeginReorderingRowAtIndexPath:)]) {
+            [self.delegate tableView:self didBeginReorderingRowAtIndexPath:indexPath];
+        }
     }];
     
     [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];

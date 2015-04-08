@@ -22,6 +22,8 @@
 @protocol HPReorderTableViewDelegate <UITableViewDelegate>
 @optional
 - (void)tableView:(UITableView *)tableView didEndReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView willBeginReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView didBeginReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 /**
