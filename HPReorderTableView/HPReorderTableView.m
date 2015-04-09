@@ -90,6 +90,26 @@ static NSString *HPReorderTableViewCellReuseIdentifier = @"HPReorderTableViewCel
     [self registerClass:cellClass forCellReuseIdentifier:HPReorderTableViewCellReuseIdentifier];
 }
 
+- (void)endAnyExistingReorder
+{
+    if (_reorderCurrentIndexPath) {
+        // we repeat a bunch of code here that's in didEndLongPressGestureRecognizer, but we also make sure that
+        // but we don't call reloadRowsAtIndexPaths: on the tableview, since that might cause an out-of-bounds crash
+        if ([self.delegate respondsToSelector:@selector(tableView:didCancelReorderingRowAtIndexPath:)]) {
+            [self.delegate tableView:self didCancelReorderingRowAtIndexPath:_reorderCurrentIndexPath];
+        }
+        [self animateShadowOpacityFromValue:_reorderDragView.layer.shadowOpacity toValue:0];
+        { // Reset
+            [_scrollDisplayLink invalidate];
+            _scrollDisplayLink = nil;
+            _scrollRate = 0;
+            _reorderCurrentIndexPath = nil;
+            _reorderInitialIndexPath = nil;
+        }
+        [self removeReorderDragView];
+    }
+}
+
 #pragma mark - Actions
 
 - (void)recognizeLongPressGestureRecognizer:(UILongPressGestureRecognizer*)gestureRecognizer
