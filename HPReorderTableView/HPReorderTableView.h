@@ -21,6 +21,7 @@
 
 @protocol HPReorderTableViewDelegate <UITableViewDelegate>
 @optional
+- (void)tableView:(UITableView *)tableView didCancelReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView didEndReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView willBeginReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView didBeginReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -48,6 +49,11 @@
  Provide your UITableViewCell subclass to set the appeareance of the temporary empty cell during dragging. An empty UITableViewCell is used by default, which leaves the empty space white.
  */
 - (void)registerTemporaryEmptyCellClass:(Class)cellClass;
+
+/**
+ Allow the caller to end any reorder that is in progress.
+ */
+- (void)endAnyExistingReorder;
 
 @end
 
