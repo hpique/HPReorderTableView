@@ -25,6 +25,10 @@
 - (void)tableView:(UITableView *)tableView didEndReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView willBeginReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView didBeginReorderingRowAtIndexPath:(NSIndexPath *)indexPath;
+/**
+ *  Can this row be allowed to be dragged. As opposed to canMoveRowAtIndexPath where determines is the row can move at all.
+ */
+- (BOOL)canDragRowAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 /**
