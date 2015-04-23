@@ -198,6 +198,13 @@ static NSString *HPReorderTableViewCellReuseIdentifier = @"HPReorderTableViewCel
     return ![self.dataSource respondsToSelector:@selector(tableView:canMoveRowAtIndexPath:)] || [self.dataSource tableView:self canMoveRowAtIndexPath:indexPath];
 }
 
+- (BOOL)canDragRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(canDragRowAtIndexPath:)]) {
+        return [self.delegate canDragRowAtIndexPath:indexPath];
+    }
+    return YES;
+}
+
 - (BOOL)hasRows
 {
     NSInteger sectionCount = [self numberOfSections];
@@ -240,7 +247,7 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
 {
     const CGPoint location = [gestureRecognizer locationInView:self];
     NSIndexPath *indexPath = [self indexPathForRowAtPoint:location];
-    if (indexPath == nil || ![self canMoveRowAtIndexPath:indexPath])
+    if (indexPath == nil || ![self canMoveRowAtIndexPath:indexPath] || ![self canDragRowAtIndexPath:indexPath])
     {
         HPGestureRecognizerCancel(gestureRecognizer);
         return;
