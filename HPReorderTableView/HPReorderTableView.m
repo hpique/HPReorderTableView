@@ -90,6 +90,26 @@ static NSString *HPReorderTableViewCellReuseIdentifier = @"HPReorderTableViewCel
     [self registerClass:cellClass forCellReuseIdentifier:HPReorderTableViewCellReuseIdentifier];
 }
 
+- (void)endAnyExistingReorder
+{
+    if (_reorderCurrentIndexPath) {
+        // we repeat a bunch of code here that's in didEndLongPressGestureRecognizer, but we also make sure that
+        // but we don't call reloadRowsAtIndexPaths: on the tableview, since that might cause an out-of-bounds crash
+        if ([self.delegate respondsToSelector:@selector(tableView:didCancelReorderingRowAtIndexPath:)]) {
+            [self.delegate tableView:self didCancelReorderingRowAtIndexPath:_reorderCurrentIndexPath];
+        }
+        [self animateShadowOpacityFromValue:_reorderDragView.layer.shadowOpacity toValue:0];
+        { // Reset
+            [_scrollDisplayLink invalidate];
+            _scrollDisplayLink = nil;
+            _scrollRate = 0;
+            _reorderCurrentIndexPath = nil;
+            _reorderInitialIndexPath = nil;
+        }
+        [self removeReorderDragView];
+    }
+}
+
 #pragma mark - Actions
 
 - (void)recognizeLongPressGestureRecognizer:(UILongPressGestureRecognizer*)gestureRecognizer
@@ -226,6 +246,9 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
         return;
     }
     
+    if ([self.delegate respondsToSelector:@selector(tableView:willBeginReorderingRowAtIndexPath:)]) {
+        [self.delegate tableView:self willBeginReorderingRowAtIndexPath:indexPath];
+    }
     UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO animated:NO];
     [cell setHighlighted:NO animated:NO];
@@ -247,6 +270,10 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
     [self animateShadowOpacityFromValue:0 toValue:_reorderDragView.layer.shadowOpacity];
     [UIView animateWithDuration:HPReorderTableViewAnimationDuration animations:^{
         _reorderDragView.center = CGPointMake(self.center.x, location.y);
+    } completion:^(BOOL finished) {
+        if ([self.delegate respondsToSelector:@selector(tableView:didBeginReorderingRowAtIndexPath:)]) {
+            [self.delegate tableView:self didBeginReorderingRowAtIndexPath:indexPath];
+        }
     }];
     
     [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
@@ -295,14 +322,16 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
 
 - (void)reorderCurrentRowToIndexPath:(NSIndexPath*)toIndexPath
 {
-    [self beginUpdates];
-    [self moveRowAtIndexPath:toIndexPath toIndexPath:_reorderCurrentIndexPath]; // Order is important to keep the empty cell behind
-    if ([self.dataSource respondsToSelector:@selector(tableView:moveRowAtIndexPath:toIndexPath:)])
-    {
-        [self.dataSource tableView:self moveRowAtIndexPath:_reorderCurrentIndexPath toIndexPath:toIndexPath];
+    if ([self canMoveRowAtIndexPath:toIndexPath]) {
+        [self beginUpdates];
+        [self moveRowAtIndexPath:toIndexPath toIndexPath:_reorderCurrentIndexPath]; // Order is important to keep the empty cell behind
+        if ([self.dataSource respondsToSelector:@selector(tableView:moveRowAtIndexPath:toIndexPath:)])
+        {
+            [self.dataSource tableView:self moveRowAtIndexPath:_reorderCurrentIndexPath toIndexPath:toIndexPath];
+        }
+        _reorderCurrentIndexPath = toIndexPath;
+        [self endUpdates];
     }
-    _reorderCurrentIndexPath = toIndexPath;
-    [self endUpdates];
 }
 
 #pragma mark Subclassing
@@ -419,7 +448,8 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
     if ([toIndexPath compare:_reorderCurrentIndexPath] == NSOrderedSame) return;
     
     NSInteger originalHeight = _reorderDragView.frame.size.height;
-    NSInteger toHeight = [self rectForRowAtIndexPath:toIndexPath].size.height;
+    // original code uses rectForRowAtIndexPath:, but this bugs out when the delegate has an implements estimatedHeightForRowAtIndexPath:
+    NSInteger toHeight = [self.delegate tableView:self heightForRowAtIndexPath:toIndexPath];
     UITableViewCell *toCell = [self cellForRowAtIndexPath:toIndexPath];
     const CGPoint toCellLocation = [gesture locationInView:toCell];
     
