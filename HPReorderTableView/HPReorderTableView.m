@@ -448,7 +448,8 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
     if ([toIndexPath compare:_reorderCurrentIndexPath] == NSOrderedSame) return;
     
     NSInteger originalHeight = _reorderDragView.frame.size.height;
-    NSInteger toHeight = [self rectForRowAtIndexPath:toIndexPath].size.height;
+    // original code uses rectForRowAtIndexPath:, but this bugs out when the delegate has an implements estimatedHeightForRowAtIndexPath:
+    NSInteger toHeight = [self.delegate tableView:self heightForRowAtIndexPath:toIndexPath];
     UITableViewCell *toCell = [self cellForRowAtIndexPath:toIndexPath];
     const CGPoint toCellLocation = [gesture locationInView:toCell];
     
