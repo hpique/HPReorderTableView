@@ -445,6 +445,8 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
     if ([self.hp_realDataSource respondsToSelector:@selector(tableView:canEditRowAtIndexPath:)])
     {
         return [self.hp_realDataSource tableView:tableView canEditRowAtIndexPath:indexPath];
+    } else if ([self.hp_realDataSource respondsToSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:)]) {
+        return YES;
     }
     return NO;
 }
