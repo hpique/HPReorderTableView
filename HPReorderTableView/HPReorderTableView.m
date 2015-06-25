@@ -440,4 +440,15 @@ static void HPGestureRecognizerCancel(UIGestureRecognizer *gestureRecognizer)
     }
 }
 
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath {
+    if ([self.hp_realDataSource respondsToSelector:@selector(tableView:canEditRowAtIndexPath:)])
+    {
+        return [self.hp_realDataSource tableView:tableView canEditRowAtIndexPath:indexPath];
+    } else if ([self.hp_realDataSource respondsToSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:)]) {
+        return YES;
+    }
+    return NO;
+}
+
 @end
