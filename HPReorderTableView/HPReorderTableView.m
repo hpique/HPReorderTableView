@@ -160,6 +160,18 @@ static NSString *HPReorderTableViewCellReuseIdentifier = @"HPReorderTableViewCel
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if ([_realDataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)])
+    {
+        return [_realDataSource tableView:tableView titleForFooterInSection:section];
+    }
+    else
+    {
+        return nil;
+    }
+}
+
 #pragma mark - Data Source Forwarding
 
 - (void)dealloc
