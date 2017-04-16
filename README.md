@@ -7,7 +7,7 @@ Drop-in UITableView replacement to reorder cells with long press on any part of 
 
 ![Reordering animation](Assets/reordering.gif)
 
-##Installation
+## Installation
 
 Using [CocoaPods](http://cocoapods.org/):
 
@@ -17,7 +17,7 @@ pod 'HPReorderTableView', '~> 0.2'
 
 Or add the files from the [HPReorderTableView](https://github.com/hpique/HPReorderTableView/tree/master/HPReorderTableView) directory if you're doing it manually.
 
-##Usage
+## Usage
 
 Simply instance `HPReorderTableView` instead of `UITableView`:
 
@@ -36,15 +36,15 @@ Then implement the reordering methods of your table view data source as you woul
 }
 ```
 
-##Customization
+## Customization
 
 See the [documentation](http://cocoadocs.org/docsets/HPReorderTableView) for customization options.
 
-##Requirements
+## Requirements
 
 HPReorderTableView requires iOS 6.1 or above and ARC. 
 
-##License
+## License
 
  Copyright 2014 Hermes Pique ([@hpique](https://twitter.com/hpique))
  
